@@ -1,0 +1,456 @@
+
+        /* --- 2. Header --- */
+        .header {
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            /* Animated gradient text */
+            background: linear-gradient(90deg, #ff8a00, #e52e71, #4d94ff, #ff8a00);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-gradient 10s linear infinite;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes text-gradient {
+            to {
+                background-position: -200% center;
+            }
+        }
+
+        /* --- 3. Language Grid (View 1) --- */
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1.5rem 3rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        }
+
+        /* --- 4. Language Card --- */
+        .language-card {
+            background: var(--card-color);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            
+            /* Glassmorphism */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            
+            /* Animation styles (for JS) */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+        }
+
+        .language-card:hover {
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* JS class for reveal animation */
+        .language-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.75rem;
+            color: var(--text-color);
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            min-height: 50px;
+        }
+
+        .card-content h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--highlight-color);
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .framework-list {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .framework-list li {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--highlight-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* --- NEW: Style for clickable framework items --- */
+        .framework-list li.framework-item {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .framework-list li.framework-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .framework-list strong {
+            display: block;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .framework-list span {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-left: 0.5rem;
+        }
+
+        /* --- NEW: Learn More Button (on Card) --- */
+        .btn-learn-more {
+            background: var(--highlight-color);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 1.25rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn-learn-more:hover {
+            background: #62a4ff;
+            transform: translateY(-2px);
+        }
+
+        /* --- NEW: Framework Modal Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Animation */
+            opacity: 0; /* Start hidden */
+            pointer-events: none; /* Ignore clicks when hidden */
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-overlay.modal-visible {
+            opacity: 1;
+            pointer-events: auto; /* Allow clicks when visible */
+        }
+
+        .modal-content {
+            /* Re-use card styles */
+            background: var(--card-color);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            
+            /* Animation */
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.modal-visible .modal-content {
+             transform: scale(1);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close-btn:hover {
+            color: var(--text-color);
+        }
+
+        .modal-content h3 {
+            font-size: 1.75rem;
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+            padding-right: 2rem; /* Space for close button */
+        }
+
+        .modal-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* --- NEW: View Switching --- */
+        .view-hidden {
+            display: none !important; /* Use display:none for flow */
+            opacity: 0;
+            transform: scale(0.98);
+            pointer-events: none;
+        }
+
+        /* --- NEW: Detail Pages (View 2) --- */
+        .detail-page {
+            max-width: 1000px;
+            margin: 2rem auto 4rem;
+            padding: 2rem 1.5rem;
+
+            /* Glassmorphism */
+            background: var(--card-color);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            
+            /* Animation */
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .detail-page .card-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-page .card-header h2 {
+            font-size: 2.5rem;
+        }
+
+        .detail-page-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .detail-page-content {
+                grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+                gap: 3rem;
+            }
+        }
+
+        .detail-explanation p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .detail-explanation h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--highlight-color);
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* --- NEW: Graphical Representation --- */
+        .graph-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--highlight-color);
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .graph-container {
+            font-size: 0.9rem;
+        }
+
+        .graph-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .bar-label {
+            width: 100px; /* Fixed width for labels */
+            white-space: nowrap;
+        }
+
+        .bar-wrapper {
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 20px;
+            background: var(--highlight-color);
+            border-radius: 4px;
+            text-align: right;
+            padding-right: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #fff;
+            white-space: nowrap;
+            /* Animation */
+            width: 0;
+            animation: growBar 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .bar.color-2 { background: #e52e71; }
+        .bar.color-3 { background: #ff8a00; }
+        .bar.color-4 { background: #f0c04f; }
+        .bar.color-5 { background: #00758f; }
+
+        @keyframes growBar {
+            from { width: 0; }
+            to { /* Width is set via inline style */ }
+        }
+
+        /* --- 5. Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* --- 6. Responsive Media Queries --- */
+        @media (max-width: 600px) {
+            body {
+                line-height: 1.5;
+            }
+
+            .header {
+                padding: 2rem 1rem 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2.25rem; /* Smaller H1 on mobile */
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+
+            .language-grid {
+                padding: 0 1rem 2rem; /* Reduce side padding further */
+                /* Use minmax(280px, 1fr) to fit one card on smallest screens */
+                grid-template-columns: 1fr; /* Force single column on small screens */ 
+            }
+
+            .detail-page {
+                margin: 1rem auto 2rem; /* Reduce top/bottom margin */
+                padding: 1.5rem 1rem; /* Reduce padding */
+            }
+
+            .detail-page .card-header h2 {
+                font-size: 2rem; /* Smaller detail H2 on mobile */
+            }
+
+            .detail-page-content {
+                gap: 1.5rem;
+            }
+
+            .bar-label {
+                width: 80px; /* Tighter label width */
+            }
+
+            .bar {
+                font-size: 0.75rem;
+            }
+        }

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Framework Universe</title>
+    
+    <!-- Google Font: Inter -->
+     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%2350c1ff'/><ellipse cx='50' cy='50' rx='40' ry='15' stroke='%2350c1ff' stroke-width='5' fill='none' transform='rotate(30 50 50)'/><ellipse cx='50' cy='50' rx='40' ry='15' stroke='%2350c1ff' stroke-width='5' fill='none' transform='rotate(-30 50 50)'/><ellipse cx='50' cy='50' rx='15' ry='40' stroke='%2350c1ff' stroke-width='5' fill='none'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- 1. Global Styles & Theme --- */
+        :root {
+            --bg-color: #0f0c29;
+            --card-color: rgba(30, 30, 50, 0.4);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --text-color: #f0f0f0;
+            --text-secondary: #a0a0c0;
+            --highlight-color: #4d94ff;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: var(--text-color);
+            line-height: 1.6;
+            /* Added for smooth view transitions */
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>The Framework Universe</h1>
+        <p>An animated guide to the applications and frameworks of the world's most popular programming languages.</p>
+    </header>
+
+    <!-- Renamed main to be a view container -->
+    <main id="main-view" class="language-grid">
+    
+        <!-- JavaScript Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0c04f"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.25H5.25m3 0H11m-5.25 0L8.25 3M3 21l5.25-11.25L11 21m-9-3h7.5" /></svg>
+                <h2>JavaScript</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">The dominant language of the web, used for creating interactive front-end experiences and powerful back-end servers.</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <!-- NEW: Added class and data attributes -->
+                    <li class="framework-item" data-title="React / Next.js" data-description="React is a JavaScript library for building user interfaces. Next.js is a popular framework built on top of React, enabling features like server-side rendering and static site generation for high-performance web applications.">
+                        <strong>React / Next.js</strong> <span>- Front-end UIs</span>
+                    </li>
+                    <li class="framework-item" data-title="Node.js / Express" data-description="Node.js is a back-end JavaScript runtime environment that executes JavaScript code outside a web browser. Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.">
+                        <strong>Node.js / Express</strong> <span>- Server-side applications</span>
+                    </li>
+                    <li class="framework-item" data-title="React Native" data-description="React Native is a framework for building native mobile apps using React. It allows you to write code once in JavaScript and deploy it on both iOS and Android, providing a native look, feel, and performance.">
+                        <strong>React Native</strong> <span>- Mobile Apps</span>
+                    </li>
+                </ul>
+                <!-- NEW: Button -->
+                <button class="btn-learn-more" data-target="#page-javascript">Learn More</button>
+            </div>
+        </div>
+        
+        <!-- Python Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4b8bbe"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6.375c0-1.036-.84-1.875-1.875-1.875H9.375C8.34 4.5 7.5 5.34 7.5 6.375v1.125c0 1.036.84 1.875 1.875 1.875h5.25c1.035 0 1.875-.84 1.875-1.875V6.375z" /><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 17.625c0 1.036-.84 1.875-1.875-1.875H9.375c-1.036 0-1.875-.84-1.875-1.875v-1.125c0-1.036.84 1.875 1.875 1.875h5.25c1.035 0 1.875.84 1.875 1.875v1.125z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 12.375V15M10.5 9.375V12m0 0v2.625" /></svg>
+                <h2>Python</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">A versatile, high-level language known for its readability. It powers everything from web servers to AI models.</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <!-- NEW: Added class and data attributes -->
+                    <li class="framework-item" data-title="Django / Flask" data-description="Django is a high-level, 'batteries-included' framework for rapid development and clean design. Flask is a 'micro-framework' that is more lightweight, flexible, and gives the developer more control.">
+                        <strong>Django / Flask</strong> <span>- Web Development</span>
+                    </li>
+                    <li class="framework-item" data-title="Pandas / NumPy" data-description="These are the core libraries for Data Science in Python. NumPy provides support for large, multi-dimensional arrays and matrices, while Pandas offers high-performance, easy-to-use data structures and data analysis tools.">
+                        <strong>Pandas / NumPy</strong> <span>- Data Science & AI</span>
+                    </li>
+                    <li class="framework-item" data-title="OpenCV" data-description="OpenCV (Open Source Computer Vision Library) is a library of programming functions mainly aimed at real-time computer vision. It's used for image and video analysis, facial recognition, and object detection.">
+                        <strong>OpenCV</strong> <span>- Computer Vision</span>
+                    </li>
+                </ul>
+                <!-- NEW: Button -->
+                <button class="btn-learn-more" data-target="#page-python">Learn More</button>
+            </div>
+        </div>
+        
+        <!-- Java Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e57020"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714c0 .828.672 1.5 1.5 1.5h1.5c.828 0 1.5-.672 1.5-1.5V3.104m6 0v5.714c0 .828-.672 1.5-1.5 1.5h-1.5c-.828 0-1.5-.672-1.5-1.5V3.104m-6.75 4.125h.008v.008H9.75v-.008zM15 7.229h.008v.008H15v-.008z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12.075c0-2.849 2.301-5.15 5.15-5.15h6.2c2.849 0 5.15 2.301 5.15 5.15v2.213A8.217 8.217 0 0118 16.5c-4.557 0-8.25-3.693-8.25-8.25 0-.411.032-.816.094-1.213H3.75v5.038z" /></svg>
+                <h2>Java</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">A class-based, object-oriented language famous for its "write once, run anywhere" philosophy, dominating enterprise-scale applications.</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <!-- NEW: Added class and data attributes -->
+                    <li class="framework-item" data-title="Spring / Spring Boot" data-description="Spring is a comprehensive framework for building enterprise-level Java applications. Spring Boot is an extension that simplifies development by removing boilerplate configuration, making it easy to create stand-alone, production-grade applications.">
+                        <strong>Spring / Spring Boot</strong> <span>- Enterprise Web Apps</span>
+                    </li>
+                    <li class="framework-item" data-title="Hibernate" data-description="Hibernate is an Object-Relational Mapping (ORM) framework. It simplifies database interaction by 'mapping' Java objects to database tables, allowing developers to write Java code instead of complex SQL.">
+                        <strong>Hibernate</strong> <span>- Database ORM</span>
+                    </li>
+                    <li class="framework-item" data-title="Android (Legacy)" data-description="For many years, Java was the primary language for building native Android apps. While Kotlin is now the preferred modern choice, a massive amount of existing Android code and many apps are still built and maintained in Java.">
+                        <strong>Android (Legacy)</strong> <span>- Mobile Development</span>
+                    </li>
+                </ul>
+                <!-- NEW: Button -->
+                <button class="btn-learn-more" data-target="#page-java">Learn More</button>
+            </div>
+        </div>
+        
+        <!-- SQL Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00758f"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.485-3.49 4.5-7.875 4.5S4.5 8.86 4.5 6.375m15.75 0c0-2.485-3.49-4.5-7.875-4.5S4.5 3.89 4.5 6.375m15.75 0v.001M4.5 6.375v.001m0 0c0 2.485 3.49 4.5 7.875 4.5S20.25 8.86 20.25 6.375M4.5 12.375c0 2.485 3.49 4.5 7.875 4.5S20.25 14.86 20.25 12.375m-15.75 0c0 2.485 3.49 4.5 7.875 4.5s7.875-2.015 7.875-4.5m-15.75 0v.001m15.75 0v.001m-15.75 5.625c0 2.485 3.49 4.5 7.875 4.5s7.875-2.015 7.875-4.5m-15.75 0v.001m15.75 0v.001" /></svg>
+                <h2>SQL</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">The standard language for managing and querying data in Relational Database Management Systems (RDBMS).</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <!-- NEW: Added class and data attributes -->
+                    <li class="framework-item" data-title="MySQL / PostgreSQL" data-description="These are not frameworks, but two of the world's most popular open-source relational database systems. MySQL is known for its speed and reliability, while PostgreSQL is known for its advanced features and extensibility.">
+                        <strong>MySQL / PostgreSQL</strong> <span>- Database Management</span>
+                    </li>
+                    <li class="framework-item" data-title="SSMS" data-description="SQL Server Management Studio (SSMS) is not a framework, but a powerful integrated environment for managing any SQL infrastructure, from Microsoft's SQL Server to Azure SQL Database.">
+                        <strong>SSMS</strong> <span>- Data Administration</span>
+                    </li>
+                    <li class="framework-item" data-title="All Backends" data-description="Nearly every backend application in any language (Python, Java, Node.js, C++) needs to store data. SQL is the universal language used to communicate with the database, making it a fundamental part of all backend development.">
+                        <strong>All Backends</strong> <span>- Data Analysis & Storage</span>
+                    </li>
+                </ul>
+                <!-- NEW: Button -->
+                <button class="btn-learn-more" data-target="#page-sql">Learn More</button>
+            </div>
+        </div>
+
+        <!-- C++ Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00599c"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75h.008v.008H12v-.008zM12 15.75h.008v.008H12v-.008z" /></svg>
+                <h2>C++</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">A high-performance language with low-level memory control, ideal for game engines, operating systems, and complex applications.</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <!-- NEW: Added class and data attributes -->
+                    <li class="framework-item" data-title="Unreal Engine" data-description="Unreal Engine is a complete suite of creation tools for game development, architectural visualization, and virtual production. It is written in C++ and is known for its cutting-edge graphics and performance.">
+                        <strong>Unreal Engine</strong> <span>- AAA Game Development</span>
+                    </li>
+                    <li class="framework-item" data-title="Qt Framework" data-description="Qt (pronounced 'cute') is a popular cross-platform framework for creating graphical user interfaces (GUIs) as well as non-GUI applications. It's widely used for desktop and embedded system development.">
+                        <strong>Qt Framework</strong> <span>- Cross-platform GUIs</span>
+                    </li>
+                    <li class="framework-item" data-title="Boost Libraries" data-description="Boost is a large collection of high-quality, peer-reviewed, and portable C++ libraries. It provides support for tasks like multithreading, networking, and data structures, and has heavily influenced the modern C++ standard.">
+                        <strong>Boost Libraries</strong> <span>- System-level Utilities</span>
+                    </li>
+                </ul>
+                <!-- NEW: Button -->
+                <button class="btn-learn-more" data-target="#page-cpp">Learn More</button>
+            </div>
+        </div>
+
+        <!-- C# Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG for C# -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9b4f96"><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75h.008v.008H12v-.008zM12 15.75h.008v.008H12v-.008zM10.125 6.188c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 6.75h3M15 9.75h3M16.5 5.25v6" /></svg>
+                <h2>C#</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">A modern, object-oriented language by Microsoft. The foundation of .NET and the top choice for Unity game development.</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <li class="framework-item" data-title=".NET (Core) / ASP.NET" data-description=".NET is a free, open-source, cross-platform framework for building all types of applications. ASP.NET is part of .NET, specifically for building modern web apps and services.">
+                        <strong>.NET (Core) / ASP.NET</strong> <span>- Enterprise & Web Apps</span>
+                    </li>
+                    <li class="framework-item" data-title="Unity" data-description="Unity is the world's most popular real-time 3D development platform. C# is the language used to write all scripts (game logic, UI, interactions) within the Unity engine.">
+                        <strong>Unity</strong> <span>- Game Development</span>
+                    </li>
+                    <li class="framework-item" data-title="Xamarin / MAUI" data-description="Xamarin (and its evolution, .NET MAUI) are frameworks for building cross-platform native mobile apps (iOS, Android) and desktop apps (Windows, macOS) using a single C# codebase.">
+                        <strong>Xamarin / MAUI</strong> <span>- Cross-platform Apps</span>
+                    </li>
+                </ul>
+                <button class="btn-learn-more" data-target="#page-csharp">Learn More</button>
+            </div>
+        </div>
+
+        <!-- Kotlin Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7f52ff"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75v4.5m0-4.5h-4.5m4.5 0L15 9m5.25 11.25v-4.5m0 4.5h-4.5m4.5 0L15 15" /></svg>
+                <h2>Kotlin</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">A modern, pragmatic language from JetBrains. It's the official choice for Android development and is also used for backend systems.</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <!-- NEW: Added class and data attributes -->
+                    <li class="framework-item" data-title="Android SDK" data-description="Kotlin is Google's official and preferred language for Android development. The Android SDK provides all the tools and APIs to build, test, and debug modern Android apps with Kotlin's concise syntax and safety features.">
+                        <strong>Android SDK</strong> <span>- Modern Mobile Apps</span>
+                    </li>
+                    <li class="framework-item" data-title="Ktor" data-description="Ktor is a lightweight, asynchronous framework for building 'microservices' and web applications in Kotlin. It's built by JetBrains and is designed to be easy to use, flexible, and performant.">
+                        <strong>Ktor</strong> <span>- Backend Microservices</span>
+                    </li>
+                    <li class="framework-item" data-title="Spring Boot" data-description="Kotlin is fully compatible with Java's Spring framework. Developers can use Kotlin with Spring Boot to write more concise, expressive, and safer backend code, enjoying the best of both Kotlin's language features and Spring's powerful ecosystem.">
+                        <strong>Spring Boot</strong> <span>- (Fully compatible) Web Apps</span>
+                    </li>
+                </ul>
+                <!-- NEW: Button -->
+                <button class="btn-learn-more" data-target="#page-kotlin">Learn More</button>
+            </div>
+        </div>
+
+        <!-- C Card -->
+        <div class="language-card">
+            <div class="card-header">
+                <!-- Icon SVG -->
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a0a0c0"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25l-4.5-4.5m0 0l4.5-4.5M5.25 12.75h13.5" /></svg>
+                <h2>C</h2>
+            </div>
+            <div class="card-content">
+                <p class="card-description">The foundational language. Unmatched in speed, it's used for writing operating systems, embedded systems, and hardware drivers.</p>
+                <h3>Frameworks & Applications</h3>
+                <ul class="framework-list">
+                    <!-- NEW: Added class and data attributes -->
+                    <li class="framework-item" data-title="Linux Kernel" data-description="The 'kernel' is the core of an operating system. The entire Linux kernel, which powers billions of devices including Android phones and most of the internet's servers, is written almost entirely in C.">
+                        <strong>Linux Kernel</strong> <span>- Operating Systems</span>
+                    </li>
+                    <li class="framework-item" data-title="GTK+ / GLib" data-description="GTK+ is a cross-platform toolkit for creating graphical user interfaces, and GLib is the low-level library it's built on. These C libraries form the foundation of the GNOME desktop environment, used by Ubuntu and other Linux distributions.">
+                        <strong>GTK+ / GLib</strong> <span>- Desktop Environments</span>
+                    </li>
+                    <li class="framework-item" data-title="Embedded Systems" data-description="Embedded systems are small computers inside larger devices (e.g., microwaves, cars, IoT devices). Because C provides direct memory access and compiles to highly efficient machine code, it is the dominant language for this type of hardware-level programming.">
+                        <strong>Embedded Systems</strong> <span>- Hardware/IoT Devices</span>
+                    </li>
+                </ul>
+                <!-- NEW: Button -->
+                <button class="btn-learn-more" data-target="#page-c">Learn More</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- --- NEW: Detail Page Sections (Hidden by default) --- -->
+    <div id="detail-pages-container" class="detail-pages">
+
+        <!-- JavaScript Detail Page -->
+        <section id="page-javascript" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0c04f"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.25H5.25m3 0H11m-5.25 0L8.25 3M3 21l5.25-11.25L11 21m-9-3h7.5" /></svg>
+                <h2>JavaScript</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>JavaScript is the undisputed king of web development. Originally created to make web pages interactive, it now runs everywhere: browsers, servers, mobile devices, and even microcontrollers.</p>
+                    <p>Its event-driven, non-blocking nature (especially with Node.js) makes it perfect for applications that need to handle many concurrent connections, like chat apps or live-streaming services.</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title="React / Next.js" data-description="React is a JavaScript library for building user interfaces. Next.js is a popular framework built on top of React, enabling features like server-side rendering and static site generation for high-performance web applications.">
+                            <strong>React / Next.js</strong> <span>- Building complex, high-performance user interfaces for the web.</span>
+                        </li>
+                        <li class="framework-item" data-title="Node.js / Express" data-description="Node.js is a back-end JavaScript runtime environment that executes JavaScript code outside a web browser. Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.">
+                            <strong>Node.js / Express</strong> <span>- Creating fast and scalable server-side APIs and applications.</span>
+                        </li>
+                        <li class="framework-item" data-title="React Native" data-description="React Native is a framework for building native mobile apps using React. It allows you to write code once in JavaScript and deploy it on both iOS and Android, providing a native look, feel, and performance.">
+                            <strong>React Native</strong> <span>- Developing cross-platform mobile apps for iOS and Android.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Front-End</div><div class="bar-wrapper"><div class="bar color-4" style="width: 90%;">90%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Back-End</div><div class="bar-wrapper"><div class="bar color-1" style="width: 65%;">65%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Mobile</div><div class="bar-wrapper"><div class="bar color-2" style="width: 50%;">50%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Python Detail Page -->
+        <section id="page-python" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4b8bbe"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6.375c0-1.036-.84-1.875-1.875-1.875H9.375C8.34 4.5 7.5 5.34 7.5 6.375v1.125c0 1.036.84 1.875 1.875 1.875h5.25c1.035 0 1.875-.84 1.875-1.875V6.375z" /><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 17.625c0 1.036-.84 1.875-1.875 1.875H9.375c-1.036 0-1.875-.84-1.875-1.875v-1.125c0-1.036.84 1.875 1.875 1.875h5.25c1.035 0 1.875.84 1.875 1.875v1.125z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 12.375V15M10.5 9.375V12m0 0v2.625" /></svg>
+                <h2>Python</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>Python's design philosophy emphasizes code readability, making it a favorite for beginners and experts alike. Its simple syntax allows developers to express complex concepts in fewer lines of code.</p>
+                    <p>While it's a "jack-of-all-trades" language, it truly dominates the fields of Data Science, Machine Learning, and AI due to its extensive ecosystem of powerful libraries.</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title="Django / Flask" data-description="Django is a high-level, 'batteries-included' framework for rapid development and clean design. Flask is a 'micro-framework' that is more lightweight, flexible, and gives the developer more control.">
+                            <strong>Django / Flask</strong> <span>- Rapid and secure web application development.</span>
+                        </li>
+                        <li class="framework-item" data-title="Pandas / NumPy" data-description="These are the core libraries for Data Science in Python. NumPy provides support for large, multi-dimensional arrays and matrices, while Pandas offers high-performance, easy-to-use data structures and data analysis tools.">
+                            <strong>Pandas / NumPy</strong> <span>- The core toolkit for data analysis and scientific computing.</span>
+                        </li>
+                        <li class="framework-item" data-title="OpenCV" data-description="OpenCV (Open Source Computer Vision Library) is a library of programming functions mainly aimed at real-time computer vision. It's used for image and video analysis, facial recognition, and object detection.">
+                            <strong>OpenCV</strong> <span>- Building and training complex deep learning models.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Data/AI</div><div class="bar-wrapper"><div class="bar color-1" style="width: 95%;">95%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Back-End</div><div class="bar-wrapper"><div class="bar color-2" style="width: 70%;">70%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Scripting</div><div class="bar-wrapper"><div class="bar color-3" style="width: 60%;">60%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Java Detail Page -->
+        <section id="page-java" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e57020"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714c0 .828.672 1.5 1.5 1.5h1.5c.828 0 1.5-.672 1.5-1.5V3.104m6 0v5.714c0 .828-.672 1.5-1.5 1.5h-1.5c-.828 0-1.5-.672-1.5-1.5V3.104m-6.75 4.125h.008v.008H9.75v-.008zM15 7.229h.008v.008H15v-.008z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12.075c0-2.849 2.301-5.15 5.15-5.15h6.2c2.849 0 5.15 2.301 5.15 5.15v2.213A8.217 8.217 0 0118 16.5c-4.557 0-8.25-3.693-8.25-8.25 0-.411.032-.816.094-1.213H3.75v5.038z" /></svg>
+                <h2>Java</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>Java's "Write Once, Run Anywhere" (WORA) principle is achieved by compiling to bytecode that runs on the Java Virtual Machine (JVM). This portability made it a cornerstone of enterprise software.</p>
+                    <p>It is known for its stability, security, and vast ecosystem of libraries. The Spring framework, in particular, is the industry standard for building robust, large-scale backend systems for banking, e-commerce, and more.</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title="Spring / Spring Boot" data-description="Spring is a comprehensive framework for building enterprise-level Java applications. Spring Boot is an extension that simplifies development by removing boilerplate configuration, making it easy to create stand-alone, production-grade applications.">
+                            <strong>Spring / Spring Boot</strong> <span>- The standard for complex, enterprise-grade web applications.</span>
+                        </li>
+                        <li class="framework-item" data-title="Hibernate" data-description="Hibernate is an Object-Relational Mapping (ORM) framework. It simplifies database interaction by 'mapping' Java objects to database tables, allowing developers to write Java code instead of complex SQL.">
+                            <strong>Hibernate</strong> <span>- An Object-Relational Mapping (ORM) tool that simplifies database interactions.</span>
+                        </li>
+                        <li class="framework-item" data-title="Android (Legacy)" data-description="For many years, Java was the primary language for building native Android apps. While Kotlin is now the preferred modern choice, a massive amount of existing Android code and many apps are still built and maintained in Java.">
+                            <strong>Android (Legacy)</strong> <span>- Was the primary language for Android development before Kotlin.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Enterprise</div><div class="bar-wrapper"><div class="bar color-3" style="width: 90%;">90%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Big Data</div><div class="bar-wrapper"><div class="bar color-1" style="width: 60%;">60%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Android</div><div class="bar-wrapper"><div class="bar color-2" style="width: 40%;">40%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SQL Detail Page -->
+        <section id="page-sql" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00758f"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.485-3.49 4.5-7.875 4.5S4.5 8.86 4.5 6.375m15.75 0c0-2.485-3.49-4.5-7.875-4.5S4.5 3.89 4.5 6.375m15.75 0v.001M4.5 6.375v.001m0 0c0 2.485 3.49 4.5 7.875 4.5S20.25 8.86 20.25 6.375M4.5 12.375c0 2.485 3.49 4.5 7.875 4.5S20.25 14.86 20.25 12.375m-15.75 0c0 2.485 3.49 4.5 7.875 4.5s7.875-2.015 7.875-4.5m-15.75 0v.001m15.75 0v.001m-15.75 5.625c0 2.485 3.49 4.5 7.875 4.5s7.875-2.015 7.875-4.5m-15.75 0v.001m15.75 0v.001" /></svg>
+                <h2>SQL</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>SQL (Structured Query Language) is not a general-purpose programming language, but a special-purpose language for managing data. It is the universal standard for interacting with relational databases.</p>
+                    <p>Every application that stores data—from a simple blog to a massive bank—uses SQL or a SQL-like language to CREATE, READ, UPDATE, and DELETE (CRUD) data. It's a fundamental skill for any developer.</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title="MySQL / PostgreSQL" data-description="These are not frameworks, but two of the world's most popular open-source relational database systems. MySQL is known for its speed and reliability, while PostgreSQL is known for its advanced features and extensibility.">
+                            <strong>MySQL / PostgreSQL</strong> <span>- The world's most popular open-source relational databases.</span>
+                        </li>
+                        <li class="framework-item" data-title="SSMS" data-description="SQL Server Management Studio (SSMS) is not a framework, but a powerful integrated environment for managing any SQL infrastructure, from Microsoft's SQL Server to Azure SQL Database.">
+                            <strong>SSMS / DBeaver</strong> <span>- SQL Server Management Studio and DBeaver are tools (not frameworks) for managing databases.</span>
+                        </li>
+                        <li class="framework-item" data-title="All Backends" data-description="Nearly every backend application in any language (Python, Java, Node.js, C++) needs to store data. SQL is the universal language used to communicate with the database, making it a fundamental part of all backend development.">
+                            <strong>Data Analysis</strong> <span>- SQL is used to write complex queries for business intelligence and reporting.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Data Storage</div><div class="bar-wrapper"><div class="bar color-5" style="width: 100%;">100%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Data Analysis</div><div class="bar-wrapper"><div class="bar color-1" style="width: 85%;">85%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Admin</div><div class="bar-wrapper"><div class="bar color-3" style="width: 60%;">60%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- C++ Detail Page -->
+        <section id="page-cpp" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00599c"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75h.008v.008H12v-.008zM12 15.75h.008v.008H12v-.008z" /></svg>
+                <h2>C++</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>C++ is a high-performance extension of C. It introduces object-oriented features, classes, and templates while retaining C's low-level power. This "close to the metal" control makes it the top choice for applications where speed is critical.</p>
+                    <p>It's the engine behind most AAA video games, high-frequency trading platforms, and performance-critical software like browsers and operating systems.</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title="Unreal Engine" data-description="Unreal Engine is a complete suite of creation tools for game development, architectural visualization, and virtual production. It is written in C++ and is known for its cutting-edge graphics and performance.">
+                            <strong>Unreal Engine</strong> <span>- A complete suite of tools for building high-fidelity 3D games and simulations.</span>
+                        </li>
+                        <li class="framework-item" data-title="Qt Framework" data-description="Qt (pronounced 'cute') is a popular cross-platform framework for creating graphical user interfaces (GUIs) as well as non-GUI applications. It's widely used for desktop and embedded system development.">
+                            <strong>Qt Framework</strong> <span>- A mature framework for building cross-platform desktop GUIs.</span>
+                        </li>
+                        <li class="framework-item" data-title="Boost Libraries" data-description="Boost is a large collection of high-quality, peer-reviewed, and portable C++ libraries. It provides support for tasks like multithreading, networking, and data structures, and has heavily influenced the modern C++ standard.">
+                            <strong>Boost Libraries</strong> <span>- A collection of powerful, peer-reviewed libraries for tasks like networking and multithreading.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Game Dev</div><div class="bar-wrapper"><div class="bar color-2" style="width: 90%;">90%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Systems</div><div class="bar-wrapper"><div class="bar color-1" style="width: 80%;">80%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Finance</div><div class="bar-wrapper"><div class="bar color-5" style="width: 65%;">65%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- C# Detail Page -->
+        <section id="page-csharp" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9b4f96"><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75h.008v.008H12v-.008zM12 15.75h.008v.008H12v-.008zM10.125 6.188c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 6.75h3M15 9.75h3M16.5 5.25v6" /></svg>
+                <h2>C#</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>C# (C-Sharp) is a powerful, type-safe, and object-oriented language developed by Microsoft. It's the primary language for the .NET framework, which allows it to build everything from robust enterprise web services to desktop applications.</p>
+                    <p>It is also the sole scripting language for the Unity engine, making it one of the most in-demand languages for game development, powering a huge portion of all mobile and PC games.</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title=".NET (Core) / ASP.NET" data-description=".NET is a free, open-source, cross-platform framework for building all types of applications. ASP.NET is part of .NET, specifically for building modern web apps and services.">
+                            <strong>.NET (Core) / ASP.NET</strong> <span>- Building cross-platform, high-performance web APIs and applications.</span>
+                        </li>
+                        <li class="framework-item" data-title="Unity" data-description="Unity is the world's most popular real-time 3D development platform. C# is the language used to write all scripts (game logic, UI, interactions) within the Unity engine.">
+                            <strong>Unity</strong> <span>- The #1 platform for creating 2D, 3D, VR, and AR games and simulations.</span>
+                        </li>
+                        <li class="framework-item" data-title="Xamarin / MAUI" data-description="Xamarin (and its evolution, .NET MAUI) are frameworks for building cross-platform native mobile apps (iOS, Android) and desktop apps (Windows, macOS) using a single C# codebase.">
+                            <strong>Xamarin / .NET MAUI</strong> <span>- Building native mobile and desktop apps from a single shared codebase.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Game Dev</div><div class="bar-wrapper"><div class="bar color-2" style="width: 85%;">85%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Enterprise</div><div class="bar-wrapper"><div class="bar color-1" style="width: 80%;">80%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Mobile/Desktop</div><div class="bar-wrapper"><div class="bar color-5" style="width: 50%;">50%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Kotlin Detail Page -->
+        <section id="page-kotlin" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7f52ff"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75v4.5m0-4.5h-4.5m4.5 0L15 9m5.25 11.25v-4.5m0 4.5h-4.5m4.5 0L15 15" /></svg>
+                <h2>Kotlin</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>Kotlin is a modern language designed to be a "better Java." It's fully interoperable with Java and the JVM but adds features like null safety, coroutines, and data classes to reduce boilerplate and improve developer happiness.</p>
+                    <p>In 2017, Google named it the official language for Android development. It is also rapidly gaining popularity for server-side development, often using the same frameworks as Java (like Spring).</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title="Android SDK" data-description="Kotlin is Google's official and preferred language for Android development. The Android SDK provides all the tools and APIs to build, test, and debug modern Android apps with Kotlin's concise syntax and safety features.">
+                            <strong>Android SDK</strong> <span>- The primary and modern way to build native Android applications.</span>
+                        </li>
+                        <li class="framework-item" data-title="Ktor" data-description="Ktor is a lightweight, asynchronous framework for building 'microservices' and web applications in Kotlin. It's built by JetBrains and is designed to be easy to use, flexible, and performant.">
+                            <strong>Ktor</strong> <span>- A lightweight, asynchronous framework built by JetBrains for backend services.</span>
+                        </li>
+                        <li class="framework-item" data-title="Spring Boot" data-description="Kotlin is fully compatible with Java's Spring framework. Developers can use Kotlin with Spring Boot to write more concise, expressive, and safer backend code, enjoying the best of both Kotlin's language features and Spring's powerful ecosystem.">
+                            <strong>Spring Boot</strong> <span>- Kotlin is a first-class citizen in the Spring ecosystem, offering a more concise syntax.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Android</div><div class="bar-wrapper"><div class="bar color-1" style="width: 95%;">95%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Back-End</div><div class="bar-wrapper"><div class="bar color-3" style="width: 60%;">60%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Cross-platform</div><div class="bar-wrapper"><div class="bar color-2" style="width: 30%;">30%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- C Detail Page -->
+        <section id="page-c" class="detail-page view-hidden">
+            <button class="btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+                Back
+            </button>
+            <div class="card-header">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a0a0c0"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25l-4.5-4.5m0 0l4.5-4.5M5.25 12.75h13.5" /></svg>
+                <h2>C</h2>
+            </div>
+            <div class="detail-page-content">
+                <div class="detail-explanation">
+                    <p>C is one of the oldest and most influential programming languages. It is a low-level, procedural language that provides direct access to memory. Almost every modern language (C++, Java, Python) is either written in C or heavily inspired by it.</p>
+                    <p>Its unmatched speed and efficiency make it the only choice for tasks where resources are tight and performance is paramount, like operating system kernels, device drivers, and tiny microcontrollers.</p>
+                    <h3>Frameworks & Applications</h3>
+                    <ul class="framework-list">
+                        <!-- NEW: Added class and data attributes -->
+                        <li class="framework-item" data-title="Linux Kernel" data-description="The 'kernel' is the core of an operating system. The entire Linux kernel, which powers billions of devices including Android phones and most of the internet's servers, is written almost entirely in C.">
+                            <strong>Linux Kernel</strong> <span>- The core of the Linux operating system (and by extension, Android) is written in C.</span>
+                        </li>
+                        <li class="framework-item" data-title="GTK+ / GLib" data-description="GTK+ is a cross-platform toolkit for creating graphical user interfaces, and GLib is the low-level library it's built on. These C libraries form the foundation of the GNOME desktop environment, used by Ubuntu and other Linux distributions.">
+                            <strong>GTK+ / GLib</strong> <span>- A library (not quite a framework) used to build desktop environments like GNOME.</span>
+                        </li>
+                        <li class="framework-item" data-title="Embedded Systems" data-description="Embedded systems are small computers inside larger devices (e.g., microwaves, cars, IoT devices). Because C provides direct memory access and compiles to highly efficient machine code, it is the dominant language for this type of hardware-level programming.">
+                            <strong>Embedded Systems</strong> <span>- Code that runs on your car, microwave, or smart watch is often written in C.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="detail-graph">
+                    <h3 class="graph-title">Common Use Cases</h3>
+                    <div class="graph-container">
+                        <div class="graph-bar"><div class="bar-label">Embedded</div><div class="bar-wrapper"><div class="bar color-5" style="width: 90%;">90%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">OS / Systems</div><div class="bar-wrapper"><div class="bar color-1" style="width: 85%;">85%</div></div></div>
+                        <div class="graph-bar"><div class="bar-label">Libraries</div><div class="bar-wrapper"><div class="bar color-3" style="width: 50%;">50%</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- --- NEW: Framework Modal --- -->
+    <div id="framework-modal-overlay" class="modal-overlay view-hidden">
+        <div id="framework-modal" class="modal-content">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <h3 id="modal-title">Framework Title</h3>
+            <p id="modal-description">Framework description goes here...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>A pure HTML, CSS, and JavaScript project. No frameworks were harmed in the making.</p>
+        <p>&copy; Loitongbam David @2025</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
